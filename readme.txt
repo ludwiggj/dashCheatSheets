@@ -1,0 +1,1 @@
+cheatset generate <fileName>.rb
