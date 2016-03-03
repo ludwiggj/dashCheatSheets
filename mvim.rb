@@ -16,6 +16,21 @@ cheatsheet do
     end
 
     entry do
+      command 'gg'
+      name 'Go to top of file'
+    end
+    
+    entry do
+      command 'gg = _SHIFT_ g'
+      name 'Format file'
+    end
+    
+    entry do
+      command 'u'
+      name 'Undo'
+    end
+    
+    entry do
       command 'V'
       name 'Visual mode'
       notes 'Select block, line by line (via V or CR)'
@@ -42,8 +57,8 @@ cheatsheet do
     end
     
     entry do
-      command 'u'
-      name 'Undo'
+      command ',,'
+      name 'Toggle current window between last two files edited'
     end
   end 
 end

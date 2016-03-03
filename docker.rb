@@ -201,16 +201,6 @@ cheatsheet do
         # Now you can ssh into docker host, and get from port 8000:
         curl localhost:8000
 
-        # To add data volume to a container (directory is automatically created on docker host):
-        docker run -itd -v <DIR_NAME> --name=<CONTAINER_NAME> <IMAGE_NAME> /bin/bash
-
-        # To mount the same directory in another container
-        docker run -itd --volumes-from=<CONTAINER_NAME> --name=<ANOTHER_CONTAINER_NAME> <IMAGE_NAME> /bin/bash
-        ```
-
-        Some more text...
-
-        ```
         # To mount docker host directory <HOST_DIR_NAME> into container at <DIR_NAME> (directory lives independently of container lifecycle):
         docker run -itd -v <HOST_DIR_NAME>:<DIR_NAME> --name=<CONTAINER_NAME> <IMAGE_NAME> /bin/bash
 
@@ -230,6 +220,16 @@ cheatsheet do
           --volumes-from=[]               Mount volumes from the specified container(s)
 
         ```
+
+        Volumes...
+
+        ```
+        # To add data volume to a container (directory is automatically created on docker host):
+        docker run -itd -v <DIR_NAME> --name=<CONTAINER_NAME> <IMAGE_NAME> /bin/bash
+
+        # To mount the same directory in another container
+        docker run -itd --volumes-from=<CONTAINER_NAME> --name=<ANOTHER_CONTAINER_NAME> <IMAGE_NAME> /bin/bash
+        ```
       "
     end
 
@@ -245,12 +245,4 @@ cheatsheet do
 
   end
   notes 'Some notes at the end of the cheat sheet'
-  #entry do
-  #  command ''
-  #  name ''
-  #  notes "
-  #    ```
-  #    ```
-  #  "
-  #end
 end
