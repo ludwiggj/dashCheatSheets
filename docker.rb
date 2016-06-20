@@ -16,10 +16,16 @@ cheatsheet do
       name 'Create docker machine'
       notes "
         ```
-        # To create a machine with BT proxies, for use on greenside:
+        # To create a greenside machine:
 
         docker-machine create --driver virtualbox --engine-env HTTP_PROXY=http://proxy.intra.bt.com:8080 --engine-env HTTPS_PROXY=http://proxy.intra.bt.com:8080 <MACHINE_NAME>
-        ```"
+        ```
+        ```
+        # To create a greenside machine pointed at a specific docker registry (e.g. dockyard.nat.bt.com):
+
+        docker-machine create --driver virtualbox --engine-env HTTP_PROXY=http://proxy.intra.bt.com:8080 --engine-env HTTPS_PROXY=http://proxy.intra.bt.com:8080 --engine-insecure-registry dockyard.nat.bt.com:5000 <MACHINE_NAME>
+        ```
+      "
     end
     
     entry do
@@ -146,6 +152,17 @@ cheatsheet do
 
         # Show the latest created container, include non-running
         docker ps -l
+        ```
+      "
+    end
+
+    entry do
+      command 'push'
+      name 'Push an image or a repository to a registry'
+      notes "
+        ```
+        # Push container, destination depends on how the image has been tagged
+        docker push NAME[:TAG]
         ```
       "
     end
